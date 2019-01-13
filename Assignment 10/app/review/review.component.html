@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+  <h1>30 Day Employee Review</h1>
+  <form #empForm="ngForm" (ngSubmit)="onSubmit(empForm)">
+
+    <label>Employee's Name</label>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" name="firstName" [(ngModel)]="emp.firstName">
+                </div>
+                <label>First Name</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="emp.lastName">
+            </div>
+            <label>Last Name</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label>Employee's title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="emp.tile">
+    </div>
+   
+    <div class="form-group">
+      <label>Employee's Department</label>
+      <select class="custom-select" name="dept" [(ngModel)]="emp.dept">
+        <option selected>Select Department</option>
+        <option *ngFor="let value of dept">{{value}}</option>     
+      </select>
+    </div>
+
+
+    <label>Overall, I would rank this employee's performance as:</label>
+    <div class="input-group">
+    <div class="custom-control custom-radio">
+    <input type="radio" class="custom-control-input" id="veryGood" name="rank" checked>
+    <label class="custom-control-label" for="veryGood">Very good</label>
+    </div>
+
+    <div class="custom-control custom-radio">
+    <input type="radio" class="custom-control-input" id="good" name="rank">
+    <label class="custom-control-label" for="good">good</label>
+    </div>
+
+    <div class="custom-control custom-radio">
+      <input type="radio" class="custom-control-input" id="fair" name="rank">
+      <label class="custom-control-label" for="fair">Fair</label>
+      </div>
+
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" id="poor" name="rank">
+        <label class="custom-control-label" for="poor">Poor</label>
+        </div>
+
+        <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" id="veryPoor" name="rank">
+          <label class="custom-control-label" for="veryPoor">Very poor</label>
+          </div>
+    </div>
+
+    <label>Please go into more detail on why you chose this ranking.</label>
+    <div class="form-group">
+      <textarea rows="4" cols="50" class="form-control">
+      </textarea> 
+    </div>
+
+    <label>Supervisor's Name</label>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <input type="text" class="form-control" name="supFirstName" [(ngModel)]="emp.supFirstName">
+                </div>
+                <label>First Name</label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+            <input type="text" class="form-control" name="supLastName" [(ngModel)]="emp.supLastName">
+            </div>
+            <label>Last Name</label>
+        </div>
+    </div>
+  
+    <div class="text-center">
+      <button class="btn btn-primary" type="submit">Submit Form</button>
+    </div>  
+</form>
+</div>   
+</div>
+</div>

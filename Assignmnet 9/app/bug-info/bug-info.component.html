@@ -1,0 +1,15 @@
+
+
+ <div class="form-group">
+    <label>Impact</label>
+    <select class="custom-select" name="impact" [(ngModel)]="bugInfo.impact">
+      <option selected>Select impact</option>
+      <option *ngFor="let value of impact">{{value}}</option>     
+    </select>
+    </div>
+
+<div class="form-group">
+    <label>Detailed explaination of bug</label>
+    <input type="text" class="form-control" name="bugDetails" [(ngModel)]="bugInfo.bugDetails">
+  </div>
+
